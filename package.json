@@ -1,0 +1,28 @@
+{
+  "name": "qa-ai-playwright-openai",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript project integrating OpenAI API for AI-assisted QA data generation and self-healing selectors.",
+  "private": false,
+  "scripts": {
+    "app:demo": "vite demo-app --host 127.0.0.1 --port 4173",
+    "install:browsers": "playwright install",
+    "test:e2e": "playwright test",
+    "test:e2e:ai": "cross-env USE_OPENAI_DATA=true playwright test",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:headed": "playwright test --headed",
+    "test:report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "openai": "^6.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QA AI Registration Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="registration-panel" aria-labelledby="registration-title">
+        <div class="panel-header">
+          <p class="eyebrow">QA automation lab</p>
+          <h1 id="registration-title">Team workspace registration</h1>
+        </div>
+
+        <form data-testid="registration-form" novalidate>
+          <div class="field-grid">
+            <label for="firstName">
+              First name
+              <input id="firstName" name="firstName" data-testid="given-name" autocomplete="given-name" required />
+            </label>
+
+            <label for="lastName">
+              Last name
+              <input id="lastName" name="lastName" data-testid="last-name" autocomplete="family-name" required />
+            </label>
+
+            <label for="email">
+              Work email
+              <input id="email" name="email" data-testid="email" type="email" autocomplete="email" required />
+            </label>
+
+            <label for="password">
+              Password
+              <input id="password" name="password" data-testid="password" type="password" autocomplete="new-password" required />
+            </label>
+
+            <label for="company">
+              Company
+              <input id="company" name="company" data-testid="company" autocomplete="organization" required />
+            </label>
+
+            <label for="role">
+              Role
+              <select id="role" name="role" data-testid="role" required>
+                <option value="">Select role</option>
+                <option value="QA Engineer">QA Engineer</option>
+                <option value="QA Lead">QA Lead</option>
+                <option value="Engineering Manager">Engineering Manager</option>
+                <option value="Product Owner">Product Owner</option>
+              </select>
+            </label>
+
+            <label for="country">
+              Country
+              <select id="country" name="country" data-testid="country" required>
+                <option value="">Select country</option>
+                <option value="Brazil">Brazil</option>
+                <option value="United States">United States</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Canada">Canada</option>
+              </select>
+            </label>
+          </div>
+
+          <button data-testid="create-account" type="submit">Create account</button>
+        </form>
+
+        <section class="result" data-testid="registration-result" aria-live="polite" hidden>
+          <h2>Account created</h2>
+          <p data-testid="created-user"></p>
+          <dl>
+            <div>
+              <dt>Email</dt>
+              <dd data-testid="created-email"></dd>
+            </div>
+            <div>
+              <dt>Company</dt>
+              <dd data-testid="created-company"></dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd data-testid="created-role"></dd>
+            </div>
+            <div>
+              <dt>Country</dt>
+              <dd data-testid="created-country"></dd>
+            </div>
+          </dl>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
